@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Wedding Theme — CSS Custom Properties
+   South Indian Royal Palette
+───────────────────────────────────────────── */
+:root {
+  /* Core Palette */
+  --ivory:       #FEFAE0;
+  --ivory-deep:  #F5EED2;
+  --gold:        #C9922A;
+  --gold-light:  #E8B84B;
+  --gold-bright: #F5C842;
+  --gold-dark:   #8B621A;
+  --peacock:     #005F73;
+  --peacock-mid: #0A7A91;
+  --peacock-light:#4DB6C8;
+  --pearl:       #F0EAD6;
+  --pearl-dark:  #D4C9A8;
+  --crimson:     #8B1A2F;
+  --maroon:      #5C1010;
+  --text-dark:   #1A1008;
+  --text-mid:    #4A3520;
+  --text-light:  #8B7355;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', 'Palatino Linotype', Georgia, serif;
+  --font-body:    'Cormorant Garamond', 'Book Antiqua', Palatino, serif;
+  --font-accent:  'Dancing Script', 'Brush Script MT', cursive;
+  --font-ui:      'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing */
+  --section-gap: 5rem;
+
+  /* Gradients */
+  --gradient-hero:    linear-gradient(160deg, #0a2e38 0%, #005F73 40%, #00879E 70%, #1a5c3a 100%);
+  --gradient-gold:    linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 40%, var(--gold-bright) 70%, var(--gold) 100%);
+  --gradient-overlay: linear-gradient(to bottom, rgba(10, 22, 22, 0.72) 0%, rgba(0, 70, 85, 0.55) 60%, rgba(0, 0, 0, 0.8) 100%);
+
+  /* Shadows */
+  --shadow-gold: 0 0 30px rgba(201, 146, 42, 0.35), 0 4px 20px rgba(0,0,0,0.3);
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ─────────────────────────────────────────────
+   Tailwind v4 Theme Extensions
+───────────────────────────────────────────── */
+@theme {
+  --color-ivory:         #FEFAE0;
+  --color-ivory-deep:    #F5EED2;
+  --color-gold:          #C9922A;
+  --color-gold-light:    #E8B84B;
+  --color-gold-bright:   #F5C842;
+  --color-gold-dark:     #8B621A;
+  --color-peacock:       #005F73;
+  --color-peacock-mid:   #0A7A91;
+  --color-peacock-light: #4DB6C8;
+  --color-pearl:         #F0EAD6;
+  --color-pearl-dark:    #D4C9A8;
+  --color-crimson:       #8B1A2F;
+  --color-maroon:        #5C1010;
+  --color-text-dark:     #1A1008;
+  --color-text-mid:      #4A3520;
+  --color-text-light:    #8B7355;
+
+  --font-heading: 'Playfair Display', 'Palatino Linotype', Georgia, serif;
+  --font-body:    'Cormorant Garamond', 'Book Antiqua', Palatino, serif;
+  --font-accent:  'Dancing Script', 'Brush Script MT', cursive;
+  --font-ui:      'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   Base Reset & Globals
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   Typography Utilities
+───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.font-accent {
+  font-family: var(--font-accent) !important;
+}
+
+/* ─────────────────────────────────────────────
+   Gold Shimmer Animation
+───────────────────────────────────────────── */
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pearlGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(201,146,42,0.4), inset 0 0 20px rgba(255,255,255,0.15); }
+  50%       { box-shadow: 0 0 35px rgba(201,146,42,0.8), inset 0 0 30px rgba(255,255,255,0.25); }
+}
+
+/* ─────────────────────────────────────────────
+   Gold Shimmer Text
+───────────────────────────────────────────── */
+.text-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark) 0%,
+    var(--gold-bright) 25%,
+    #fff8dc 50%,
+    var(--gold-bright) 75%,
+    var(--gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   Decorative Divider
+───────────────────────────────────────────── */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: var(--gradient-gold);
+  opacity: 0.7;
+}
+
+.ornament-diamond {
+  width: 10px;
+  height: 10px;
+  background: var(--gradient-gold);
+  transform: rotate(45deg);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ─────────────────────────────────────────────
+   Scrollbar Styling
+───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--ivory-deep); }
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-gold);
+  border-radius: 4px;
+}

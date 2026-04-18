@@ -1,0 +1,106 @@
+{
+  "site": {
+    "title": "Vishali & Purushotham",
+    "tagline": "Two Souls, One Journey",
+    "description": "Join us as we celebrate the sacred union of Priya and Arjun in a traditional South Indian wedding ceremony.",
+    "seoDescription": "Priya & Arjun Wedding — A South Indian Wedding Celebration. Save the date and join us for this joyous occasion.",
+    "locale": "en-IN"
+  },
+  "couple": {
+    "bride": {
+      "firstName": "Vishali",
+      "lastName": "Maharajan",
+      "nickName": "Vishali",
+      "bio": "A lover of classical Bharatanatyam, filter coffee, and long sunsets."
+    },
+    "groom": {
+      "firstName": "Purushotham",
+      "lastName": "Parthy",
+      "nickName": "Purushotham",
+      "bio": "A Carnatic music enthusiast who can cook a mean sambar and tells terrible jokes."
+    }
+  },
+  "events": [
+    {
+      "id": "nalangu",
+      "name": "Nalangu & Mehendi",
+      "date": "2026-12-17",
+      "time": "04:00 PM",
+      "venue": "Ranga Mandapam, Anna Salai",
+      "city": "Chennai, Tamil Nadu",
+      "description": "A fun-filled pre-wedding ceremony with turmeric paste, playful games, and intricate mehendi designs.",
+      "dresscode": "Pastel Silks",
+      "image": "/event_nalangu.png"
+    },
+    {
+      "id": "muhurtham",
+      "name": "Muhurtham (Wedding Ceremony)",
+      "date": "2026-12-18",
+      "time": "07:00 AM",
+      "venue": "Sri Kapaleeshwarar Kalyana Mandapam",
+      "city": "Mylapore, Chennai",
+      "description": "The auspicious wedding ceremony conducted in the traditional Tamil Brahmin style, followed by a grand feast.",
+      "dresscode": "Traditional Silk Sarees & Dhotis",
+      "image": "/event_muhurtham.png"
+    },
+    {
+      "id": "reception",
+      "name": "Grand Reception",
+      "date": "2026-12-18",
+      "time": "07:00 PM",
+      "venue": "The Leela Palace",
+      "city": "Chennai, Tamil Nadu",
+      "description": "An evening of celebration, music, and dining with family and friends.",
+      "dresscode": "Formal / Ethnic",
+      "image": "/event_reception.png"
+    },
+    {
+      "id": "Wedding",
+      "name": "Wedding",
+      "date": "2026-12-18",
+      "time": "07:00 PM",
+      "venue": "The Leela Palace",
+      "city": "Chennai, Tamil Nadu",
+      "description": "An evening of celebration, music, and dining with family and friends.",
+      "dresscode": "Formal / Ethnic"
+    }
+  ],
+  "gallery": {
+    "hero": "/wedding_hero_bg.png",
+    "elephant": "/wedding_elephant.png",
+    "divider": "/wedding_divider_motif.png"
+  },
+  "photos": [
+    {
+      "id": "photo1",
+      "src": "/wedding_hero_bg.png",
+      "alt": "Pre-wedding shoot 1"
+    },
+    {
+      "id": "photo2",
+      "src": "/wedding_elephant.png",
+      "alt": "Pre-wedding shoot 2"
+    },
+    {
+      "id": "photo3",
+      "src": "/wedding_divider_motif.png",
+      "alt": "Pre-wedding shoot 3"
+    }
+  ],
+  "location": {
+    "venue": "Maruvarasi Kalyana Mandapam",
+    "address": "Nandagopalan Kovil South Street, Maalai Kovil, Cumbum, Tamilnadu - 625516",
+    "description": "The wedding ceremony will take place in the auspicious presence of goddess Meenakshi at the historic Madurai temple.",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1259599520023!2d78.11586521479261!3d9.919504892906805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c582b1189633%3A0x6fb86538c644d6da!2sMeenakshi%20Amman%20Temple!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+  },
+  "rsvp": {
+    "deadline": "2026-11-30",
+    "contactEmail": "priya.arjun2026@gmail.com",
+    "contactPhone": "+91 98765 43210"
+  },
+  "theme": {
+    "primaryColor": "gold",
+    "accentColor": "peacockBlue",
+    "backgroundColor": "ivory"
+  }
+}
