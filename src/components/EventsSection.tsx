@@ -134,7 +134,6 @@ export default function EventsSection() {
         {/* ── Slides 1–N: One card per event ── */}
         {EVENTS.map((event, index) => {
           const isEven = index % 2 === 0;
-          const date = new Date(event.date + "T00:00:00+05:30");
 
           return (
             <div
@@ -224,12 +223,7 @@ export default function EventsSection() {
                         <Calendar className="w-5 h-5" style={{ color: "var(--gold-light)" }} />
                       </div>
                       <span className="font-ui text-base" style={{ color: "var(--pearl)" }}>
-                        {date.toLocaleDateString("en-US", {
-                          weekday: "long",
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
+                        {event.date}
                       </span>
                     </div>
                     <div className="flex items-center gap-4">
