@@ -1,5 +1,5 @@
 import content from "@/data/wedding-content.json";
-import { MapPin, Navigation, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
 
 export default function LocationSection() {
   const { location } = content;
@@ -29,8 +29,11 @@ export default function LocationSection() {
 
         {/* ── Venue Card — minimalistic ── */}
         <div
-          className="w-full lg:w-72 lg:flex-shrink-0 rounded-2xl bg-white flex flex-col p-10 gap-6"
-          style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(201,146,42,0.12)" }}
+          className="w-full lg:w-72 lg:flex-shrink-0 rounded-2xl bg-white flex flex-col gap-6"
+          style={{
+            boxShadow: "0 4px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(201,146,42,0.12)",
+            padding: "2.5rem"
+          }}
         >
           {/* Icon */}
           <div
@@ -63,24 +66,8 @@ export default function LocationSection() {
             </p>
           </div>
 
-          {/* Description */}
-          <p className="font-body text-sm leading-relaxed italic" style={{ color: "var(--text-light)" }}>
-            {location.description}
-          </p>
-
           {/* Buttons */}
           <div className="flex flex-col gap-2.5 mt-auto pt-2">
-            <a
-              href={directionsUrl}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-ui text-xs tracking-widest uppercase font-semibold transition-all duration-200 hover:opacity-90"
-              style={{
-                background: "var(--peacock)",
-                color: "#fff",
-              }}
-            >
-              <Navigation className="w-3.5 h-3.5" />
-              Get Directions
-            </a>
             <a
               href={directionsUrl}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-ui text-xs tracking-widest uppercase font-medium transition-all duration-200 hover:bg-black/5"

@@ -44,7 +44,7 @@ export default function EventsSection() {
   return (
     <div
       className="relative"
-      style={{ height: "calc(100vh - 80px)" }}
+      style={{ height: "100dvh" }}
     >
       {/* Scroll-snap container */}
       <div
@@ -57,7 +57,7 @@ export default function EventsSection() {
           data-slide={0}
           className="relative flex flex-col items-center justify-center bg-ivory-deep"
           style={{
-            height: "calc(100vh - 80px)",
+            height: "100dvh",
             scrollSnapAlign: "start",
             backgroundImage: "url('/wedding_divider_motif.png')",
             backgroundSize: "180px",
@@ -134,7 +134,7 @@ export default function EventsSection() {
         {/* ── Slides 1–N: One card per event ── */}
         {EVENTS.map((event, index) => {
           const isEven = index % 2 === 0;
-          const date = new Date(event.date);
+          const date = new Date(event.date + "T00:00:00+05:30");
 
           return (
             <div
@@ -142,7 +142,7 @@ export default function EventsSection() {
               data-slide={index + 1}
               className="relative flex items-center justify-center"
               style={{
-                height: "calc(100vh - 80px)",
+                height: "100dvh",
                 scrollSnapAlign: "start",
                 background: isEven
                   ? "linear-gradient(160deg, #061820 0%, #004455 100%)"
@@ -224,7 +224,7 @@ export default function EventsSection() {
                         <Calendar className="w-5 h-5" style={{ color: "var(--gold-light)" }} />
                       </div>
                       <span className="font-ui text-base" style={{ color: "var(--pearl)" }}>
-                        {date.toLocaleDateString("en-IN", {
+                        {date.toLocaleDateString("en-US", {
                           weekday: "long",
                           year: "numeric",
                           month: "long",
@@ -268,16 +268,6 @@ export default function EventsSection() {
 
                   {/* Dresscode + Next btn */}
                   <div className="flex flex-wrap items-center gap-4">
-                    <span
-                      className="px-5 py-2 rounded-full text-sm font-ui tracking-widest uppercase border"
-                      style={{
-                        borderColor: isEven ? "rgba(201,146,42,0.35)" : "rgba(0,150,180,0.35)",
-                        color: isEven ? "var(--gold-light)" : "var(--peacock-light)",
-                        background: "rgba(255,255,255,0.05)",
-                      }}
-                    >
-                      Dresscode &nbsp;·&nbsp; {event.dresscode}
-                    </span>
 
                     {index < EVENTS.length - 1 && (
                       <button

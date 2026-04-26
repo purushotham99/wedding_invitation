@@ -11,7 +11,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Events", href: "/events" },
-    { name: "Gallery", href: "/gallery" },
+    // { name: "Gallery", href: "/gallery" },
     { name: "Location", href: "/location" },
   ];
 
@@ -24,11 +24,11 @@ export default function Navbar() {
         borderBottom: "1px solid rgba(201,146,42,0.12)",
       }}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-y-4 md:gap-y-0">
 
           {/* Logo / Names */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-full text-center md:w-auto md:text-left">
             <Link
               href="/"
               className="font-accent text-2xl md:text-3xl transition-colors duration-300"
@@ -74,25 +74,25 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Nav */}
-          <div className="flex md:hidden items-center gap-x-3">
+          <div className="flex md:hidden items-center justify-center gap-x-2 w-full overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-xs font-ui tracking-widest uppercase transition-colors px-3 py-1.5 rounded-full border"
+                  className="text-xs font-ui tracking-widest uppercase transition-colors px-3 py-1.5 rounded-full border whitespace-nowrap"
                   style={
                     isActive
                       ? {
-                          background: "rgba(201,146,42,0.2)",
-                          color: "var(--gold-bright)",
-                          borderColor: "rgba(201,146,42,0.4)",
-                        }
+                        background: "rgba(201,146,42,0.2)",
+                        color: "var(--gold-bright)",
+                        borderColor: "rgba(201,146,42,0.4)",
+                      }
                       : {
-                          color: "var(--text-mid)",
-                          borderColor: "transparent",
-                        }
+                        color: "var(--text-mid)",
+                        borderColor: "transparent",
+                      }
                   }
                 >
                   {link.name}
